@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ResumeAI — Build. Match. Get Hired.</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="authScreen" class="auth-screen">
+    <div class="auth-card">
+      <h1>Resume<span style="color:#E8A33D">AI</span></h1>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="register">Register</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+      <form id="registerForm" class="auth-form hidden">
+        <input type="text" id="regName" placeholder="Full name" required />
+        <input type="email" id="regEmail" placeholder="Email" required />
+        <input type="password" id="regPassword" placeholder="Password" required />
+        <button type="submit">Create account</button>
+      </form>
+      <p id="authMsg" class="msg"></p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <nav class="sidebar">
+      <h2>Resume<span>AI</span></h2>
+      <div class="nav-group">
+        <div class="nav-group-label">Overview</div>
+        <button class="nav-btn active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg>Dashboard</button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Build</div>
+        <button class="nav-btn" data-page="resume"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/></svg>Resume Builder</button>
+        <button class="nav-btn" data-page="import"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>Import Profile</button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Optimize</div>
+        <button class="nav-btn" data-page="ats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>ATS Score</button>
+        <button class="nav-btn" data-page="jdmatch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="6"/><path d="M20 20l-5.5-5.5"/></svg>JD Match</button>
+        <button class="nav-btn" data-page="tailored"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21v-6a2 2 0 012-2h12a2 2 0 012 2v6"/><path d="M8 13V7a4 4 0 118 0v6"/></svg>Tailored Versions</button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Apply &amp; Prep</div>
+        <button class="nav-btn" data-page="coverletter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Cover Letter</button>
+        <button class="nav-btn" data-page="interview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Interview Prep</button>
+        <button class="nav-btn" data-page="jobs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Job Suggestions</button>
+        <button class="nav-btn" data-page="applications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>Applications</button>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Insights</div>
+        <button class="nav-btn" data-page="analytics"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>Analytics</button>
+      </div>
+      <div class="sidebar-bottom">
+        <button id="logoutBtn" class="nav-btn logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>Logout</button>
+      </div>
+    </nav>
+
+    <main class="content">
+      <section id="page-dashboard" class="page active">
+        <div class="hero-greeting"><h2>Welcome back<span id="welcomeName"></span></h2><span class="date" id="todayDate"></span></div>
+        <div class="stat-grid" id="dashboardCards"></div>
+        <div class="dash-grid">
+          <div class="panel"><h3>Resume Health</h3><p class="panel-sub">Latest ATS check on your active resume</p><div id="resumeHealthBox"></div></div>
+          <div class="panel"><h3>Recent Activity</h3><p class="panel-sub">Your latest tracked applications</p><div id="recentActivityBox"></div></div>
+          <div class="panel"><h3>Top Job Matches</h3><p class="panel-sub">Click a job to see matching skills</p><div id="dashJobsBox"></div></div>
+        </div>
+        <div class="quick-actions">
+          <button class="btn-accent" data-goto="resume">+ Build Resume</button>
+          <button class="btn-ghost" data-goto="ats">Run ATS Check</button>
+          <button class="btn-ghost" data-goto="jobs">See Job Matches</button>
+          <button class="btn-ghost" data-goto="applications">Track Application</button>
+        </div>
+      </section>
+
+      <section id="page-resume" class="page">
+        <div class="page-head"><h2>Resume Builder</h2><p class="hint">Build your master resume — tailor versions of it for specific jobs later.</p></div>
+
+        <div class="upload-box">
+          <b>Already have a resume?</b>
+          <div class="upload-hint">Upload a .txt file, or paste text below, to auto-fill your summary and skills.</div>
+          <input type="file" id="resumeFile" accept=".txt,.pdf" />
+          <textarea id="pasteResumeText" rows="3" placeholder="...or paste your resume text here" style="margin-top:0.6rem;"></textarea>
+          <button id="parseResumeBtn" class="btn-accent btn-sm" style="margin-top:0.5rem;">Extract into form</button>
+          <div id="parseResult" class="hint" style="margin-top:0.5rem;"></div>
+        </div>
+
+        <select id="resumeSelect"><option value="">-- New Resume --</option></select>
+
+        <div class="builder-grid" style="margin-top:0.75rem;">
+          <form id="resumeForm" class="grid-form panel">
+            <label>Title <input id="rTitle" value="My Resume" /></label>
+            <label>Full name <input id="rName" /></label>
+            <label>Summary <textarea id="rSummary" rows="2"></textarea></label>
+            <label>Education (degree - institution, one per line) <textarea id="rEducation" rows="2"></textarea></label>
+            <label>Experience — role @ company (one per line, then bullets below with "-") <textarea id="rExperience" rows="6" placeholder="Intern @ TechCorp&#10;- worked on backend APIs&#10;- fixed bugs in frontend"></textarea></label>
+            <label>Skills (comma separated) <input id="rSkills" /></label>
+            <label>Projects — title: description (one per line) <textarea id="rProjects" rows="3" placeholder="Chat with PDF: Built a RAG app using LangChain"></textarea></label>
+            <button type="submit" class="btn-accent">Save Resume</button>
+            <p class="msg" id="resumeMsg"></p>
+          </form>
+
+          <div class="resume-preview" id="resumePreview">
+            <div class="rp-name">Your name</div>
+            <div class="rp-summary">Fill in the form to see a live preview here.</div>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:1rem;">
+          <h3>✨ AI Suggestions</h3>
+          <p class="panel-sub">Save your resume first, then get specific, actionable improvements — not generic tips.</p>
+          <button id="runSuggestions" class="btn-accent">Get AI Suggestions</button>
+          <div id="suggestionsResult" class="result-box hidden"></div>
+        </div>
+      </section>
+
+      <section id="page-ats" class="page">
+        <div class="page-head"><h2>ATS Score Checker</h2><p class="hint">Uses your saved resume. Select one on the Resume Builder page first.</p></div>
+        <button id="runAts" class="btn-accent">Run ATS Check</button>
+        <div id="atsResult" class="result-box hidden"></div>
+      </section>
+
+      <section id="page-jdmatch" class="page">
+        <div class="page-head"><h2>Job Description Match</h2><p class="hint">Paste a job description to see how well your resume matches it.</p></div>
+        <textarea id="jdText" rows="6" placeholder="Paste the job description here..."></textarea>
+        <button id="runJdMatch" class="btn-accent">Check Match</button>
+        <div id="jdResult" class="result-box hidden"></div>
+      </section>
+
+      <section id="page-tailored" class="page">
+        <div class="page-head"><h2>Tailored Resume Versions</h2><p class="hint">Generate a version of your resume rewritten toward a specific job.</p></div>
+        <div class="panel grid-form">
+          <label>Job title <input id="tJobTitle" placeholder="e.g. Full Stack Developer" /></label>
+          <label>Company <input id="tCompany" placeholder="e.g. Brightwave Labs" /></label>
+          <label>Job description <textarea id="tJdText" rows="5" placeholder="Paste job description..."></textarea></label>
+          <button id="runTailor" class="btn-accent">Generate Tailored Version</button>
+        </div>
+        <div id="tailorResult" class="result-box hidden"></div>
+        <h3 style="margin-top:1.5rem; font-size:1.05rem;">Saved Versions</h3>
+        <div id="versionsList" class="job-grid" style="margin-top:0.6rem;"></div>
+      </section>
+
+      <section id="page-coverletter" class="page">
+        <div class="page-head"><h2>Cover Letter Generator</h2></div>
+        <div class="panel grid-form">
+          <label>Job title <input id="clJobTitle" placeholder="Job title" /></label>
+          <label>Company <input id="clCompany" placeholder="Company" /></label>
+          <label>Job description (optional, improves matching) <textarea id="clJdText" rows="4"></textarea></label>
+          <button id="runCoverLetter" class="btn-accent">Generate Cover Letter</button>
+        </div>
+        <div id="coverLetterResult" class="result-box hidden"></div>
+      </section>
+
+      <section id="page-interview" class="page">
+        <div class="page-head"><h2>Interview Question Generator</h2></div>
+        <div class="panel grid-form">
+          <label>Job title <input id="ivJobTitle" placeholder="Job title" /></label>
+          <label>Job description (optional) <textarea id="ivJdText" rows="4"></textarea></label>
+          <button id="runInterview" class="btn-accent">Generate Questions</button>
+        </div>
+        <div id="interviewResult" class="result-box hidden"></div>
+      </section>
+
+      <section id="page-import" class="page">
+        <div class="page-head"><h2>Import from LinkedIn / GitHub</h2></div>
+        <div class="import-block">
+          <h3>GitHub</h3>
+          <p class="hint">Pulls your public repos as projects.</p>
+          <input id="ghUsername" placeholder="GitHub username" />
+          <button id="runGithub" class="btn-accent">Import Repos</button>
+          <div id="githubResult" class="result-box hidden"></div>
+        </div>
+        <div class="import-block">
+          <h3>LinkedIn</h3>
+          <p class="hint">LinkedIn blocks automated scraping, so paste your exported "About/Experience" text instead.</p>
+          <textarea id="liText" rows="5" placeholder="Paste LinkedIn profile text..."></textarea>
+          <button id="runLinkedin" class="btn-accent">Extract Skills</button>
+          <div id="linkedinResult" class="result-box hidden"></div>
+        </div>
+      </section>
+
+      <section id="page-jobs" class="page">
+        <div class="page-head"><h2>Job Suggestions</h2><p class="hint">Matched against sample job postings. Click any job to see exactly which skills matched.</p></div>
+        <button id="runJobSuggest" class="btn-accent">Get Suggested Jobs</button>
+        <div id="jobsResult" class="job-grid" style="margin-top:1rem;"></div>
+      </section>
+
+      <section id="page-applications" class="page">
+        <div class="page-head"><h2>Application Tracker</h2></div>
+        <form id="appForm" class="inline-form">
+          <input id="appCompany" placeholder="Company" required />
+          <input id="appJobTitle" placeholder="Job title" required />
+          <select id="appStatus">
+            <option value="applied">Applied</option>
+            <option value="interview">Interview</option>
+            <option value="offer">Offer</option>
+            <option value="rejected">Rejected</option>
+          </select>
+          <button type="submit" class="btn-accent">Add</button>
+        </form>
+        <div class="kanban" id="kanbanBoard" style="margin-top:0.75rem;"></div>
+      </section>
+
+      <section id="page-analytics" class="page">
+        <div class="page-head"><h2>Analytics Dashboard</h2></div>
+        <div class="stat-grid" id="analyticsCards"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

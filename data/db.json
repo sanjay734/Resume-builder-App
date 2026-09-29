@@ -1,0 +1,142 @@
+{
+  "users": [
+    {
+      "id": "92dbbad8-54c8-4fcb-9fd5-9b2915b9a68a",
+      "name": "rahul",
+      "email": "admin@gmail.com",
+      "salt": "ed14ba4049a628a2a52cc1f3d04cc3af",
+      "hash": "8f1e6b687af9ca34a7c7849daf32a74e6225a43299cfeb3dc48aacad762bb76d10e77489cf1fc3e45398e03ec0c8027d4a30b8e9e1a87886207e17445d328555",
+      "createdAt": "2026-09-29T06:38:17.913Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "096d54423843759c038d6b892f6a9aca4093e84c2c24234f63a3b161462493ac",
+      "userId": "92dbbad8-54c8-4fcb-9fd5-9b2915b9a68a",
+      "createdAt": "2026-09-29T06:38:17.916Z"
+    }
+  ],
+  "resumes": [
+    {
+      "id": "f03808b3-abb7-4b06-89be-a3542d5130fc",
+      "userId": "92dbbad8-54c8-4fcb-9fd5-9b2915b9a68a",
+      "title": "My Resume",
+      "personal": {
+        "name": "",
+        "summary": "ALEXANDER CARTER  Software Engineer | Java & Full-Stack Development | AI Applications  Bengaluru, India | +91 98765 43210 | alex.carter@example.com | linkedin.com/in/alexcarter | github.com/alexcarter  PROFESSIONAL SUMMARY  Software engineer with hands-on experience developing full-stack applications, REST APIs, and AI-powered solutions. Strong foundation in Java, Spring Boot, Python, React, SQL, "
+      },
+      "education": [],
+      "experience": [],
+      "skills": [
+        "ai",
+        "java",
+        "rest",
+        "spring",
+        "software",
+        "apis",
+        "boot",
+        "api",
+        "development",
+        "python",
+        "llm",
+        "full",
+        "stack",
+        "applications",
+        "react",
+        "application",
+        "database",
+        "skills",
+        "git",
+        "github"
+      ],
+      "projects": [],
+      "versions": [
+        {
+          "id": "fc894369-8f4f-4ba2-9d05-b9a2bf8164a3",
+          "jobTitle": "developer",
+          "company": "wipro",
+          "jdText": "**Job Title: Junior Java Full Stack Developer**\n\n**Location:** Bengaluru, Karnataka\n**Job Type:** Full-Time\n**Experience:** Fresher / 0–1 Years\n\n### Job Description\n\nWe are looking for a motivated Junior Java Full Stack Developer to join our development team. The candidate will work on developing, testing, and maintaining web applications using Java and modern frontend technologies.\n\n### Responsibilities\n\n* Develop and maintain web applications using Java and Spring Boot.\n* Create REST APIs and integrate frontend applications with backend services.\n* Work with MySQL databases and perform CRUD operations.\n* Develop responsive user interfaces using HTML, CSS, JavaScript, and React.\n* Debug and fix application issues.\n* Write clean, reusable, and maintainable code.\n* Collaborate with developers and team members on project requirements.\n* Participate in testing, code reviews, and deployment activities.\n\n### Required Skills\n\n* Good knowledge of Core Java and OOP concepts.\n* Knowledge of Spring Boot and REST APIs.\n* Basic knowledge of Spring Security.\n* Knowledge of SQL and MySQL.\n* Good understanding of HTML, CSS, and JavaScript.\n* Basic knowledge of React.js.\n* Familiarity with Git and GitHub.\n* Good problem-solving and communication skills.\n\n### Qualifications\n\n* Bachelor's degree in Computer Science, Information Technology, Engineering, or a related field.\n* Freshers are welcome to apply.\n* Candidates should have a strong willingness to learn new technologies.\n\n### Preferred Skills\n\n* Knowledge of JDBC.\n* Knowledge of Maven.\n* Familiarity with Postman.\n* Basic understanding of deployment and cloud platforms.\n\n### What We Offer\n\n* Opportunity to work on real-world projects.\n* Mentorship from experienced developers.\n* Learning and career-growth opportunities.\n* Collaborative work environment.\n* Competitive salary based on skills and experience.\n",
+          "matchScoreBefore": 34,
+          "missingKeywords": [
+            "knowledge",
+            "work",
+            "job",
+            "using",
+            "good",
+            "basic",
+            "junior",
+            "developer",
+            "testing",
+            "web",
+            "frontend",
+            "technologies.",
+            "develop",
+            "html",
+            "css"
+          ],
+          "tailoredBullets": [],
+          "createdAt": "2026-09-29T06:39:32.026Z"
+        }
+      ],
+      "createdAt": "2026-09-29T06:38:55.926Z"
+    }
+  ],
+  "applications": [],
+  "coverLetters": [
+    {
+      "id": "61ab6f35-b33e-4790-b282-f6220518d920",
+      "userId": "92dbbad8-54c8-4fcb-9fd5-9b2915b9a68a",
+      "resumeId": "f03808b3-abb7-4b06-89be-a3542d5130fc",
+      "jobTitle": "analyst",
+      "company": "ibm",
+      "content": "Dear Hiring Manager,\n\nI am excited to apply for the analyst position at ibm. With hands-on experience in ai, java, rest, spring, I have developed a strong foundation that aligns closely with what your team is looking for, particularly around java, full, applications, spring.\n\nIn my recent projects, I have applied these skills to build real, working solutions, and I am eager to bring the same energy and problem-solving approach to ibm. I would welcome the opportunity to discuss how my background can contribute to your team's goals.\n\nThank you for your time and consideration.\n\nSincerely,\nCandidate",
+      "createdAt": "2026-09-29T06:39:41.351Z"
+    }
+  ],
+  "atsReports": [
+    {
+      "id": "1fed47bf-17c0-4a04-972d-269bb720d799",
+      "resumeId": "f03808b3-abb7-4b06-89be-a3542d5130fc",
+      "score": 67,
+      "issues": [
+        "Resume looks too short — add more detail on experience/projects.",
+        "Few strong action verbs found (e.g. built, led, optimized) — start bullets with them.",
+        "Few bullet points detected — use bullet points for experience/projects, not paragraphs."
+      ],
+      "wordCount": 68,
+      "actionVerbCount": 0,
+      "createdAt": "2026-09-29T06:39:05.795Z"
+    },
+    {
+      "id": "5f6d98c2-c89f-4a70-87e7-27175fb5c6d6",
+      "resumeId": "f03808b3-abb7-4b06-89be-a3542d5130fc",
+      "score": 67,
+      "issues": [
+        "Resume looks too short — add more detail on experience/projects.",
+        "Few strong action verbs found (e.g. built, led, optimized) — start bullets with them.",
+        "Few bullet points detected — use bullet points for experience/projects, not paragraphs."
+      ],
+      "wordCount": 68,
+      "actionVerbCount": 0,
+      "createdAt": "2026-09-29T06:47:18.204Z"
+    }
+  ],
+  "interviewSets": [
+    {
+      "id": "ac75f5ed-f78c-40ff-bff9-aedb9072c5a7",
+      "resumeId": "f03808b3-abb7-4b06-89be-a3542d5130fc",
+      "jobTitle": "developer",
+      "questions": [
+        "Tell me about a project where you used ai.",
+        "How would you approach debugging a production issue under time pressure?",
+        "Describe a time you had to learn a new technology quickly for a project.",
+        "Why are you interested in the developer role at this company?",
+        "Walk me through how you'd design a system related to this job's responsibilities.",
+        "Tell me about a time you disagreed with a teammate — how did you resolve it?",
+        "What's a challenging bug or problem you solved recently, and how?",
+        "Where do you see yourself growing in this developer role over the next year?"
+      ],
+      "createdAt": "2026-09-29T06:39:48.975Z"
+    }
+  ]
+}
